@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Krizel</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+        body {
+            font-family: 'Patrick Hand', cursive;
+            background: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            background-color: #f5e6cc;
+            overflow: hidden;
+            position: relative;
+        }
+        .container {
+            text-align: center;
+        }
+        .button {
+            background-color: #8b5e3c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: opacity 1s, transform 1s;
+        }
+        .message-container {
+            display: none;
+            text-align: left;
+            width: 90%; /* Allow the message to use most of the page width */
+            max-width: 800px; /* Limit max width for readability */
+            margin: 0 auto; /* Center the message container */
+        }
+        .message {
+            font-size: 24px;
+            white-space: pre-wrap;
+            word-wrap: break-word; /* Ensure the message wraps correctly */
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="intro">
+        <h1>For Krizel</h1>
+        <button class="button" onclick="revealMessage()">Click here</button>
+    </div>
+    <div id="content" class="message-container">
+        <p id="message" class="message"></p>
+        <audio autoplay loop>
+            <source src="your-music-url-here" type="audio/mp3">
+        </audio>
+    </div>
+    <script>
+        function revealMessage() {
+            let intro = document.getElementById('intro');
+            let content = document.getElementById('content');
+            let message = document.getElementById('message');
+            let fullText = `Hi, Zel! :)
+
+Just in case no one has told you today—I’m so proud of you. Proud of everything you’ve endured, everything you’ve achieved, and everything you continue to be.
+
+I hope you know how worthy you are and how much light you bring to the world. I’m proud of you for not giving up, even when it felt like the easiest choice. I’m proud of you for choosing to keep going, for showing up every day—whether it’s a good one or a tough one.
+
+I'm proud of you for taking steps to better yourself and your life lately and for finally showing yourself just how much you are capable of (which is a lot).
+Your strength and courage keeps me inspired. You deserve all the good things in life, you deserve happiness, so kahit sana sa letter na 'to mapangiti kita. You inspire me. I am proud of you, always :). 
+
+Happy Valentine’s Day! 🤍
+
+
+P.S. sorry if I greeted you late, technically nagchat naman ako sayo before 14th of Feb ends HAHAHA jk
+ang hirap pala kasi mag host ng html file+my time yesterday so yea xD ito na yon `;
+            
+            intro.style.opacity = '0';
+            setTimeout(() => {
+                intro.style.display = 'none';
+                content.style.display = 'block';
+                typeWriter(message, fullText, 40); // Faster speed (40ms)
+            }, 1000);
+        }
+        
+        function typeWriter(element, text, speed) {
+            let i = 0;
+            function typing() {
+                if (i < text.length) {
+                    element.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(typing, speed);
+                }
+            }
+            typing();
+        }
+    </script>
+</body>
+</html>
