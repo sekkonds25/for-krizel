@@ -9,17 +9,19 @@
         body {
             font-family: 'Patrick Hand', cursive;
             background: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            flex-direction: column;
             background-color: #f5e6cc;
-            overflow: hidden;
-            position: relative;
+            margin: 0;
+            padding: 20px;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            overflow-y: auto; /* Allows scrolling */
         }
         .container {
             text-align: center;
+            margin-top: 50px;
         }
         .button {
             background-color: #8b5e3c;
@@ -33,15 +35,14 @@
         }
         .message-container {
             display: none;
-            text-align: left;
             width: 90%; /* Allow the message to use most of the page width */
             max-width: 800px; /* Limit max width for readability */
-            margin: 0 auto; /* Center the message container */
+            margin: 20px auto;
         }
         .message {
-            font-size: 24px;
+            font-size: 20px;
             white-space: pre-wrap;
-            word-wrap: break-word; /* Ensure the message wraps correctly */
+            word-wrap: break-word;
             overflow: hidden;
         }
     </style>
@@ -54,7 +55,7 @@
     <div id="content" class="message-container">
         <p id="message" class="message"></p>
         <audio autoplay loop>
-            <source src="your-music-url-here" type="audio/mp3">
+            <source src="your-music-url-here.mp3" type="audio/mp3">
         </audio>
     </div>
     <script>
@@ -69,19 +70,19 @@ Just in case no one has told you today—I’m so proud of you. Proud of everyth
 I hope you know how worthy you are and how much light you bring to the world. I’m proud of you for not giving up, even when it felt like the easiest choice. I’m proud of you for choosing to keep going, for showing up every day—whether it’s a good one or a tough one.
 
 I'm proud of you for taking steps to better yourself and your life lately and for finally showing yourself just how much you are capable of (which is a lot).
-Your strength and courage keeps me inspired. You deserve all the good things in life, you deserve happiness, so kahit sana sa letter na 'to mapangiti kita. You inspire me. I am proud of you, always :). 
+Your strength and courage keep me inspired. You deserve all the good things in life, you deserve happiness, so kahit sana sa letter na 'to mapangiti kita. You inspire me. I am proud of you, always :). 
 
 Happy Valentine’s Day! 🤍
 
 
 P.S. sorry if I greeted you late, technically nagchat naman ako sayo before 14th of Feb ends HAHAHA jk
 ang hirap pala kasi mag host ng html file+my time yesterday so yea xD ito na yon `;
-            
+
             intro.style.opacity = '0';
             setTimeout(() => {
                 intro.style.display = 'none';
                 content.style.display = 'block';
-                typeWriter(message, fullText, 40); // Faster speed (40ms)
+                typeWriter(message, fullText, 30); // Even faster speed
             }, 1000);
         }
         
